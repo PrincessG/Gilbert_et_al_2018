@@ -1,0 +1,41 @@
+---
+title: "JsonImport"
+author: "ps.gilbert"
+date: "June 17, 2015"
+output: word_document
+---
+Import the json file into in R
+```{r}
+library(rjson)
+stufftoprocessDOS<-fromJSON(file="/Users/Princess/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/391_oryLat2.nex.rates")
+```
+
+Using jsonlite instead 
+```{r}
+library(jsonlite) # might need to load the package jsonlite. It's already downloaded to this compute and it's under "Packages on the right."
+stufftoprocessDOS<-fromJSON(txt="/Users/Princess/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/391_oryLat2.nex.rates.txt")
+
+stufftoprocessDOSdataframe<-as.data.frame(stufftoprocessDOS)
+tstuff<-transform(stufftoprocessDOSdataframe)
+```
+
+Isolate the substitution matrix values
+```{r}
+SubstitutionMatrix<-stufftoprocessDOS$sites$subs_matrix
+```
+
+Isolate the nucleotide frequencies
+```{r}
+NucleotideFrequencies<-stufftoprocessDOS$sites$freqs
+```
+Isolate the substitution per site rates
+```{r}
+RatesRates<-stufftoprocessDOS$sites$rates$rate
+RatesRates_dataframe<-as.data.frame(RatesRates)
+```
+Export everything...
+```{r}
+#Base Pair Percentages
+test_percents.txt<-write.table(testpercents[1:3], file="~/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/Test_Percents.txt",col.names=c("PiA=", "PiC=", "PiT="),row.names=FALSE)
+write.table(RatesRates,file="~/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/Test_Rates.txt",row.names=FALSE)
+()
