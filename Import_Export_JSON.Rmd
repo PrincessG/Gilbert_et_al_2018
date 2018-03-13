@@ -7,13 +7,13 @@ output: word_document
 Import the json file into in R
 ```{r}
 library(rjson)
-stufftoprocessDOS<-fromJSON(file="/Users/Princess/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/391_oryLat2.nex.rates")
+stufftoprocessDOS<-fromJSON(file="Location_Of_PI_RateFileOutput/391_oryLat2.nex.rates")
 ```
 
-Using jsonlite instead 
+Using jsonlite library instead 
 ```{r}
 library(jsonlite) # might need to load the package jsonlite. It's already downloaded to this compute and it's under "Packages on the right."
-stufftoprocessDOS<-fromJSON(txt="/Users/Princess/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/391_oryLat2.nex.rates.txt")
+stufftoprocessDOS<-fromJSON(txt="Location_Of_PI_RateFileOutput/391_oryLat2.nex.rates.txt")
 
 stufftoprocessDOSdataframe<-as.data.frame(stufftoprocessDOS)
 tstuff<-transform(stufftoprocessDOSdataframe)
@@ -36,6 +36,6 @@ RatesRates_dataframe<-as.data.frame(RatesRates)
 Export everything...
 ```{r}
 #Base Pair Percentages
-test_percents.txt<-write.table(testpercents[1:3], file="~/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/Test_Percents.txt",col.names=c("PiA=", "PiC=", "PiT="),row.names=FALSE)
-write.table(RatesRates,file="~/Documents/Research/Aves/SignalNoise/Analyses/SignalNoise_TESTFOLDER/Test_Rates.txt",row.names=FALSE)
+test_percents.txt<-write.table(testpercents[1:3], file="~/OutputDirectory/Test_Percents.txt",col.names=c("PiA=", "PiC=", "PiT="),row.names=FALSE)
+write.table(RatesRates,file="~/OutputDirectory/Test_Rates.txt",row.names=FALSE)
 ()
