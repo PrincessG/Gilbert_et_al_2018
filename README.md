@@ -115,3 +115,29 @@ phyluce_align_convert_one_align_to_another \
 --log-path ~/Logs/ \
 --shorten-names
 
+________________________________RaxML___________________________________________________________________________________
+#First Generate your two random numbers:
+for i in 1 2; do echo $RANDOM; done
+
+#First find the "best" ML tree.
+#!!!RUN FROM THE DIRECTORY YOU WANT YOUR RAxML OUTPUT FILES TO LIVE there will be at least as many as you specify with -N!!!
+
+	#9.28.16
+raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -n QuestionE_RAxML.9.28.16.best -s ~/LocationOf_RAxML_Input/ProblemName_CuratedPhylipFiles.phylip -N 20 -p 31257 -T 24
+
+#Now calculate the bootstrap support values for each branch of your phylogeny. 
+raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -n boostraps -s ~/ProblemName_CuratedPhylipFiles.phylip -N 200 -b 18965 -p 10410 -T2
+
+#From the Phyluce Tutorial, you can also "reconcile the bootstraps with the best tree" by entering
+raxmlHPC-SSE3 \
+    -m GTRGAMMA \
+    -f b \
+    -t RAxML_bestTreeFileName \
+    -z RAxML_BestTreeFileName_bootstrap.bootstraps \
+    -n Run.CurrentDate
+
+
+
+#Now you can open the tree for viewing in FigTree. Use the file without "BranchLabels" in the filename. 
+
+#You'll want to edit the .tree file so that the tip labels are common names instead of scientific names if you're making the trees we did Gilbert et al. 2018. 
