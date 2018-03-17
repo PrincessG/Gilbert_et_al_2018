@@ -9,7 +9,7 @@ __________________________________________
 
 # Hello! These are instructions from beginning to end for Signal Noise calculations! 
 First Run PI on the nexus alignment files of your choice.
-To do this , navigate to the directory where each nexus.rates file live and see below
+To do this , navigate to the directory where each nexus.rates file live and see below:
 
 # Choosing UCEs of Interest
 At some point we decided it would be interesting to look at the split between Neognathae and Paleognathae birds. This occured 
@@ -37,7 +37,7 @@ phyluce_align_format_nexus_files_for_raxml \
     --log-path ~/
     
     
-_____________________________After Putting all UCEs of Interest in a directory__________________________
+# After Putting all UCEs of Interest in a directory
 #Alter each file name so that it can be used in the Mathematica signal/noise notebook. 
 	#Refer to BigBirdFileFormating_nexus.rates_files.txt
 
@@ -60,8 +60,8 @@ _____________________________After Putting all UCEs of Interest in a directory__
 #Enter mathematica
 	#on linux-> Enter ./math
 	
-__________________________________After Running Mathematica___________________________________________________________
-# 	Concatenate all the Mathematica Output files into one text file. 
+# After Running Mathematica
+#Concatenate all the Mathematica Output files into one text file. 
 	#Use cat *.csv >> FileName.txt 
 	##If file list is exceedingly long use ls | xargs -n 32 -P 8 cat  >> ~/SNImportFiles/filename.txt
 #	Grep " ,\n " and replace it with "\n" in textwrangler
@@ -115,7 +115,7 @@ phyluce_align_convert_one_align_to_another \
 --log-path ~/Logs/ \
 --shorten-names
 
-________________________________RaxML___________________________________________________________________________________
+# RaxML
 #First Generate your two random numbers:
 for i in 1 2; do echo $RANDOM; done
 
