@@ -1,5 +1,5 @@
-# Gilbert_et_al_2018
-Repository for scripts and codes referred to in the manuscript "Filtering nucleotide sites by phylogenetic signal to noise ratio increases confidence in the Neoaves phylogeny generated from ultraconserved elements", which is currently in review.  
+# Welcome to the Readme file! 
+This is a repository for scripts and codes referred to in the manuscript "Filtering nucleotide sites by phylogenetic signal to noise ratio increases confidence in the Neoaves phylogeny generated from ultraconserved elements", which is currently in review.  
 
 If you find this repository helpful please cite it using the following DOI: https://zenodo.org/badge/latestdoi/124963673
 
@@ -7,11 +7,11 @@ Thanks & Cheers,
 PS Gilbert
 __________________________________________
 
-#Hello! These are instructions from beginning to end for Signal Noise calculations! 
-#Run PI on the nexus alignment files of your choice.
-#Navigate to the directory where each nexus.rates file live.
+# Hello! These are instructions from beginning to end for Signal Noise calculations! 
+First Run PI on the nexus alignment files of your choice.
+To do this , navigate to the directory where each nexus.rates file live and see below
 
-____________________________________Choosing UCEs of Interest________________________________________________________
+# Choosing UCEs of Interest
 At some point we decided it would be interesting to look at the split between Neognathae and Paleognathae birds. This occured 
 at around 102 MYA. So to explore which UCEs would have the most signal for this question, we're interested in those UCEs
 who reach their maximum PI at or after 102 MYA ago. We'd then want to concatenate those UCEs and analyze their signal as
