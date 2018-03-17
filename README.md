@@ -59,3 +59,59 @@ _____________________________After Putting all UCEs of Interest in a directory__
 #Change file path so that they match the output directory location.
 #Enter mathematica
 	#on linux-> Enter ./math
+	
+__________________________________After Running Mathematica___________________________________________________________
+# 	Concatenate all the Mathematica Output files into one text file. 
+	#Use cat *.csv >> FileName.txt 
+	##If file list is exceedingly long use ls | xargs -n 32 -P 8 cat  >> ~/SNImportFiles/filename.txt
+#	Grep " ,\n " and replace it with "\n" in textwrangler
+	## If the file list is exceedingly long use 
+		vim filename.txt # Enter vim or vi 
+		:%s/,\n/\r/g #Remove the comma at the end of each line and replace with a character return
+		:wq #Save file
+#	Run SNImport.R, be sure that the output is sorted by UCE because Jing's script won't work if the UCEs are NOT read in consecutively. 
+#	Remove the header using textwrangler (as of 2018 BBEdit will suffice)
+#	Confirm that the two columns are sorted correctly in microsoft Excel (it's the fastest way). 
+#	Initiate Jing Script
+python test.py Corrected_CuratedUCE_List
+
+####	Protip: To remove the large folders created by Mathematica a useful command is : rm -rv FolderName
+								OR
+					   : perl -e 'for(<*>){((stat)[9]<(unlink))}'
+
+
+#	Do Step A or B depending on your dataset:  
+
+#	Step A: You have UCEs that will be concatenated as one locus
+	#Concatenate All Nexus files into one alignment. This script will also export the concatenated dataset in phylip format for RaxML.
+	#WARNING: DO NOT CREATE THE OUTPUT DIRECTORY BEFORE RUNNING THE SCRIPT!!!
+	
+#RUN THE FOLLOWING THE anaconda/bin DIRECTORY ON ANALYSIS:
+phyluce_align_format_nexus_files_for_raxml \
+--alignment ~/CuratedNexusFiles \
+--output ~/CuratedTest/ \
+--log-path ~/Logs/ \
+
+######Example Problem Run:
+phyluce_align_format_nexus_files_for_raxml \
+--alignment ~/PSG/FolderLocationOfNexusFiles \
+--verbosity INFO \
+--output ~/ProblemName_Date.RAxML_Input/ \
+--log-path ~/PSG/ProbemName_RAxML_Logs/ \
+
+
+#	Change the output file name to be more logical manually
+CuratedNexusFiles.phylip -> CuratedPhylipFile.phylip
+
+
+#	Step B: You have individual loci that will each need their own substitution model:
+	#RUN FROM THE BIN DIRECTORY OF THE ANACONDA FOLDER ON YOUR COMPUTER:
+phyluce_align_convert_one_align_to_another \
+--alignment ~/CuratedNexusFiles \
+--output ~/CuratedPhylipFiles \
+--input-format nexus \
+--output-format phylip \
+--cores 12 \
+--log-path ~/Logs/ \
+--shorten-names
+
