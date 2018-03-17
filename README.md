@@ -31,11 +31,11 @@ thousands of base pairs. To make the problem less unruly we decided to "bin" the
 files that match the UCEs you're interested in, put them into a single directory and concatenate them using phyluce. 
 RUN FROM THE BIN DIRECTORY OF THE ANACONDA FOLDER ON ANALYSIS:
 phyluce_align_format_nexus_files_for_raxml \
-    --alignments ~/ \
+ ```   --alignments ~/ \
     --output ~/ \
     --charsets \
     --log-path ~/
-    
+```    
     
 # After Putting all UCEs of Interest in a directory
 #Alter each file name so that it can be used in the Mathematica signal/noise notebook. 
