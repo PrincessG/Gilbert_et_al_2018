@@ -35,10 +35,10 @@ files that match the UCEs you're interested in, put them into a single directory
 FROM THE BIN DIRECTORY OF THE ANACONDA FOLDER:
 ```
 phyluce_align_format_nexus_files_for_raxml \
-    --alignments ~/ \
-    --output ~/ \
+    --alignments ~/LocationOfAlignments \
+    --output ~/LocationOfOutput \
     --charsets \
-    --log-path ~/    
+    --log-path ~/LocationOfLogFile    
 ```    
 # After Putting all UCEs of Interest in a directory
 #Alter each file name so that it can be used in the Mathematica signal/noise notebook. 
