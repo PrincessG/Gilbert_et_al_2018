@@ -15,7 +15,7 @@ __________________________________________
 
 2. Choose UCEs of Interest
 
-3. Export list of UCEs of interest from R.
+	3. Export list of UCEs of interest from R.
 
 4. Open UCE interest text file and Find & replace using textwrangler so that each line in the text file matches the following:
 find `.nex` & Replace with `.nex.rates`
