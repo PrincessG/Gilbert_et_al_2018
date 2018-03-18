@@ -15,12 +15,13 @@ __________________________________________
 
 2. Choose UCEs of Interest
 
-	3. Export list of UCEs of interest from R.
+  #How I chose my UCEs of Interest
+Export list of UCEs of interest from R.
 
-	4. Open UCE interest text file and Find & replace using textwrangler so that each line in the text file matches the following:
+4. Open UCE interest text file and Find & replace using textwrangler so that each line in the text file matches the following:
 	find `.nex` & Replace with `.nex.rates`.
 
-	5. Remove carriage returns and quotations so that every UCE is on the first line separated by a space.
+5. Remove carriage returns and quotations so that every UCE is on the first line separated by a space.
 
 6. Add cp to the beginning of line 1.
 
