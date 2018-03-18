@@ -19,7 +19,7 @@ thousands of base pairs. To make the problem less unruly we decided to "bin" the
 
 #Export list of UCEs of interest from R.
 #Open UCE interest text file and Find & replace using textwrangler so that each line in the text file matches the following:
-find '''.nex''' & Replace with '''.nex.rates'''
+find `.nex` & Replace with `.nex.rates`
 #Remove carriage returns and quotations so that every UCE is on the first line separated by a space.
 #Add cp to the beginning of line 1.
 #Add destination folder to the end of line 1 (i.e. ~/Documents/Research/Aves/DestinationFolder)
