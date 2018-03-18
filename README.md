@@ -31,14 +31,14 @@ find `.nex` & Replace with `.nex.rates`
 
 #You might want to run each folder as one giant locus. If this is the case, you'll need to isolate the .nexus
 files that match the UCEs you're interested in, put them into a single directory and concatenate them using phyluce. 
-RUN FROM THE BIN DIRECTORY OF THE ANACONDA FOLDER ON ANALYSIS:
 
-```phyluce_align_format_nexus_files_for_raxml \
+FROM THE BIN DIRECTORY OF THE ANACONDA FOLDER:
+
+phyluce_align_format_nexus_files_for_raxml \
     --alignments ~/ \
     --output ~/ \
     --charsets \
-    --log-path ~/
-```    
+    --log-path ~/    
     
 # After Putting all UCEs of Interest in a directory
 #Alter each file name so that it can be used in the Mathematica signal/noise notebook. 
