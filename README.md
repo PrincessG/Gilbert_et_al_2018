@@ -11,7 +11,7 @@ __________________________________________
 # Instructions from beginning to end for Signal Noise calculations! 
 1. Run PI on the nexus alignment files of your choice.
 
-To do this , navigate to the directory where each nexus.rates file live and see below:
+...To do this , navigate to the directory where each nexus.rates file live and see below:
 
 # Choosing UCEs of Interest
 At some point we decided it would be interesting to look at the split between Neognathae and Paleognathae birds. This occured at around 102 MYA. So to explore which UCEs would have the most signal for this question, we're interested in those UCEs
