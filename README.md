@@ -50,17 +50,17 @@ phyluce_align_format_nexus_files_for_raxml \
 #Now transfer the dataset to the alfaro analysis computer. SKIP IF YOUR USED ONLINE R STUDIO.
 
 #Create a text file with the name of each marker in the directory.
-	ls > FileNames.txt	#Use this command in terminal to ls 
+	```ls > FileNames.txt```	#Use this command in terminal to ls 
 
 #Clean up the FileNames.txt file so that it only has the UCE names followed by a comma. 
 
-# Cut & Paste the list of UCE names into the signal/noise mathematica notebook.
-# Correct the Tnaught and T value inputs.
+#Cut & Paste the list of UCE names into the signal/noise mathematica notebook.
+#Correct the Tnaught and T value inputs.
 #57-55MYA=2MYA so Tnaught is 2, and T is 55. 
-# Change file paths so that they match the input dataset locations. 
+#Change file paths so that they match the input dataset locations. 
 #Change file path so that they match the output directory location.
 #Enter mathematica
-	#on linux-> Enter ./math
+	#on linux-> Enter ```./math```
 	
 # After Running Mathematica
 #Concatenate all the Mathematica Output files into one text file. 
@@ -125,19 +125,19 @@ for i in 1 2; do echo $RANDOM; done
 #!!!RUN FROM THE DIRECTORY YOU WANT YOUR RAxML OUTPUT FILES TO LIVE there will be at least as many as you specify with -N!!!
 
 	#9.28.16
-raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -n QuestionE_RAxML.9.28.16.best -s ~/LocationOf_RAxML_Input/ProblemName_CuratedPhylipFiles.phylip -N 20 -p 31257 -T 24
-
+```raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -n QuestionE_RAxML.9.28.16.best -s ~/LocationOf_RAxML_Input/ProblemName_CuratedPhylipFiles.phylip -N 20 -p 31257 -T 24
+```
 #Now calculate the bootstrap support values for each branch of your phylogeny. 
-raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -n boostraps -s ~/ProblemName_CuratedPhylipFiles.phylip -N 200 -b 18965 -p 10410 -T2
-
+```raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -n boostraps -s ~/ProblemName_CuratedPhylipFiles.phylip -N 200 -b 18965 -p 10410 -T2
+```
 #From the Phyluce Tutorial, you can also "reconcile the bootstraps with the best tree" by entering
-raxmlHPC-SSE3 \
+```raxmlHPC-SSE3 \
     -m GTRGAMMA \
     -f b \
     -t RAxML_bestTreeFileName \
     -z RAxML_BestTreeFileName_bootstrap.bootstraps \
     -n Run.CurrentDate
-
+```
 
 
 #Now you can open the tree for viewing in FigTree. Use the file without "BranchLabels" in the filename. 
