@@ -24,7 +24,7 @@ find `.nex` & Replace with `.nex.rates`
 
 6. Add cp to the beginning of line 1.
 
-7. Add destination folder to the end of line 1 (i.e. ~/Documents/Research/Aves/DestinationFolder)
+7. Add destination folder to the end of line 1 (i.e. ~/DestinationFolder)
 
 8. Save as YourChosenFilename.txt. 
 
