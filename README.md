@@ -8,8 +8,9 @@ Thanks & Cheers,
 PS Gilbert
 __________________________________________
 
-# Hello! These are instructions from beginning to end for Signal Noise calculations! 
-First Run PI on the nexus alignment files of your choice.
+# Instructions from beginning to end for Signal Noise calculations! 
+1. Run PI on the nexus alignment files of your choice.
+
 To do this , navigate to the directory where each nexus.rates file live and see below:
 
 # Choosing UCEs of Interest
