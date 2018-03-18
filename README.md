@@ -22,8 +22,7 @@ __________________________________________
 	Remove carriage returns and quotations so that every UCE is on the first line separated by a space.
 	Add cp to the beginning of line 1.
 	Add destination folder to the end of line 1 (i.e. ~/DestinationFolder)
-
-8. Save as YourChosenFilename.txt. 
+	Save as YourChosenFilename.txt. 
 
 
 #You might want to run each folder as one giant locus. If this is the case, you'll need to isolate the .nexus
